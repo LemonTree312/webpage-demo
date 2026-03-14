@@ -1,0 +1,253 @@
+:root {
+  --bg: #f4efe7;
+  --bg-accent: #e6dccf;
+  --surface: rgba(255, 252, 247, 0.78);
+  --surface-strong: #fffaf2;
+  --text: #1d1c1a;
+  --muted: #5c554d;
+  --line: rgba(29, 28, 26, 0.1);
+  --primary: #b24c2a;
+  --primary-strong: #8f3213;
+  --shadow: 0 20px 60px rgba(88, 54, 26, 0.12);
+}
+
+body[data-theme="night"] {
+  --bg: #16181c;
+  --bg-accent: #23262d;
+  --surface: rgba(28, 32, 39, 0.76);
+  --surface-strong: #20242b;
+  --text: #f2eee7;
+  --muted: #c0b8ab;
+  --line: rgba(242, 238, 231, 0.1);
+  --primary: #f08f62;
+  --primary-strong: #ffb183;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(178, 76, 42, 0.18), transparent 28%),
+    radial-gradient(circle at right 20%, rgba(234, 188, 114, 0.22), transparent 24%),
+    linear-gradient(180deg, var(--bg), var(--bg-accent));
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 85%);
+  pointer-events: none;
+}
+
+.page-shell {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.hero {
+  padding: 4.5rem 0 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--primary);
+}
+
+h1,
+h2 {
+  font-family: "DM Serif Display", serif;
+  line-height: 0.98;
+  margin: 0;
+}
+
+h1 {
+  max-width: 10ch;
+  font-size: clamp(3.3rem, 8vw, 7rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.75rem;
+}
+
+.hero-copy,
+.feature-card p:last-child,
+.callout p,
+.stat-label {
+  color: var(--muted);
+}
+
+.hero-copy {
+  max-width: 42rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 1.5rem 0 0;
+}
+
+.hero-actions,
+.message-box {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.9rem 1.3rem;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  background: var(--primary);
+  border-color: transparent;
+  color: #fff8f1;
+}
+
+.button-primary:hover {
+  background: var(--primary-strong);
+}
+
+.button-secondary {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  border-radius: 28px;
+}
+
+.stats-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1.25rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0.2rem 0 0;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.feature-card,
+.callout {
+  padding: 1.5rem;
+}
+
+.feature-index {
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 1rem;
+}
+
+.callout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.message-box {
+  justify-content: flex-end;
+}
+
+#message {
+  min-width: min(26rem, 100%);
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 820px) {
+  .stats-panel,
+  .features,
+  .callout {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .callout {
+    justify-content: initial;
+  }
+
+  #message {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-shell {
+    width: min(100% - 1rem, 1100px);
+  }
+
+  .hero {
+    padding-top: 2.5rem;
+  }
+
+  .panel,
+  .feature-card,
+  .callout {
+    border-radius: 22px;
+  }
+
+  .stats-panel {
+    padding: 1rem;
+  }
+}

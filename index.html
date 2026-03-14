@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Launch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <p class="eyebrow">Basic Website Demo</p>
+      <h1>Make a clear first impression.</h1>
+      <p class="hero-copy">
+        A lightweight landing page built with plain HTML, CSS, and JavaScript.
+        It includes a responsive layout, a few interactive touches, and no framework overhead.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#features">Explore features</a>
+        <button class="button button-secondary" id="theme-toggle" type="button" aria-pressed="false">
+          Switch theme
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel stats-panel" aria-label="Project stats">
+        <div>
+          <p class="stat-label">Load time mindset</p>
+          <p class="stat-value">Fast</p>
+        </div>
+        <div>
+          <p class="stat-label">Tech stack</p>
+          <p class="stat-value">Vanilla</p>
+        </div>
+        <div>
+          <p class="stat-label">Responsive</p>
+          <p class="stat-value">Yes</p>
+        </div>
+      </section>
+
+      <section class="features" id="features">
+        <article class="panel feature-card reveal">
+          <p class="feature-index">01</p>
+          <h2>Structured layout</h2>
+          <p>Hero, stats, feature cards, and a small interactive section give the page enough shape to extend.</p>
+        </article>
+        <article class="panel feature-card reveal">
+          <p class="feature-index">02</p>
+          <h2>Intentional styling</h2>
+          <p>Custom typography, layered gradients, and soft contrast make it feel more designed than boilerplate.</p>
+        </article>
+        <article class="panel feature-card reveal">
+          <p class="feature-index">03</p>
+          <h2>Small JavaScript touches</h2>
+          <p>Theme switching and scroll reveal behavior add interaction without introducing external dependencies.</p>
+        </article>
+      </section>
+
+      <section class="panel callout reveal">
+        <div>
+          <p class="eyebrow">Interactive snippet</p>
+          <h2>Click through a few rotating messages.</h2>
+        </div>
+        <div class="message-box">
+          <p id="message">Simple sites do not need complicated tooling.</p>
+          <button class="button button-primary" id="message-button" type="button">Next message</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

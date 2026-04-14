@@ -4,10 +4,10 @@ const messageNode = document.querySelector("#message");
 const revealNodes = document.querySelectorAll(".reveal");
 
 const messages = [
-  "Simple sites do not need complicated tooling.",
-  "Start with a clean layout, then add the behavior you actually need.",
-  "Small visual details can make plain HTML feel deliberate.",
-  "This page is ready to be expanded into a real project."
+  "Cloud Cuckoo Land LLC",
+  "Official landing page for Cloud Cuckoo Land LLC.",
+  "Panucopia.com",
+  "Contact: jcposner@panucopia.com"
 ];
 
 let messageIndex = 0;
